@@ -2,8 +2,6 @@
 {
     public class BasketballCalculator : ICalculator
     {
-     
-
         public int CalculatePoint()
         {
 

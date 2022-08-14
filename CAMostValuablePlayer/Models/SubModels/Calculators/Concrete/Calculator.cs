@@ -18,5 +18,9 @@ namespace CAMostValuablePlayer
         {
             return _calculator.CalculatePoint();
         }
+        public Player GetMostValuablePlayer()
+        {
+            return _calculator.GetMostValuablePlayer();
+        }
     }
 }
