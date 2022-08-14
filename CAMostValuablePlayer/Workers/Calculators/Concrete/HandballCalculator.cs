@@ -1,18 +1,24 @@
 ﻿namespace CAMostValuablePlayer
 {
-    public class HandballCalculator : ICalculator
+    public class HandballCalculator : ICalculator<HandballPlayer>
     {
-        public int CalculatePoint()
+        public List<HandballPlayer> BindPlayerPoints(List<HandballPlayer> players)
         {
-            return 0;
+            foreach (var player in players)
+                player.Point =   player.InitialRatingPoints
+                               + (player.GoalMade * player.GoalMadeMultiplier)
+                               + (player.GoalReceived * player.GoalReceivedMultiplier);
+
+            return players;
         }
 
         public Player GetMostValuablePlayer()
         {
             var handballDataGetter = new HandballDataGetter();
-            List<HandballPlayer>  handballPlayers = handballDataGetter.GetPlayers();
+            List<HandballPlayer> handballPlayers = handballDataGetter.GetPlayers();
+            var players = BindPlayerPoints(handballPlayers);
 
-            return handballPlayers.First();
+            return players.OrderByDescending(x => x.Point).First();
         }
     }
 }

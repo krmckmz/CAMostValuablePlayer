@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CAMostValuablePlayer
+﻿namespace CAMostValuablePlayer
 {
-    public interface ICalculator
+    public interface ICalculator<T>
     {
-        public abstract int CalculatePoint();
+        public abstract List<T> BindPlayerPoints(List<T> players);
         public abstract Player GetMostValuablePlayer();
     }
 }

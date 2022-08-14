@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CAMostValuablePlayer
+﻿namespace CAMostValuablePlayer
 {
-    public class Calculator
+    public class Calculator<T>
     {
-        private readonly ICalculator _calculator;
-        public Calculator(ICalculator calculator)
+        private readonly ICalculator<T> _calculator;
+        public Calculator(ICalculator<T> calculator)
         {
             _calculator = calculator;
         }
 
-        public int CalculatePoint()
+        public List<T> BindPlayerPoints(List<T> players)
         {
-            return _calculator.CalculatePoint();
+            return _calculator.BindPlayerPoints(players);
         }
         public Player GetMostValuablePlayer()
         {

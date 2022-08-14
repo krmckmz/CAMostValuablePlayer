@@ -4,16 +4,15 @@
     {
         static public void Main(String[] args)
         {
-
-            var basketballCalculator = new Calculator(new BasketballCalculator());
+            var basketballCalculator = new Calculator<BasketballPlayer>(new BasketballCalculator());
             var basketballMvp = basketballCalculator.GetMostValuablePlayer();
 
-            var handballCalculator = new Calculator(new HandballCalculator());
+            var handballCalculator = new Calculator<HandballPlayer>(new HandballCalculator());
             var handballMvp = handballCalculator.GetMostValuablePlayer();
 
-            Console.WriteLine($"Basketball Mvp : {basketballMvp}");
-            Console.WriteLine("");
-            Console.WriteLine($"Handball Mvp : {handballMvp}");
+            Console.WriteLine($"{nameof(basketballMvp)} : {basketballMvp}");
+            Console.WriteLine(string.Empty);
+            Console.WriteLine($"{nameof(handballMvp)} : {handballMvp}");
             Console.ReadLine();
         }
 
