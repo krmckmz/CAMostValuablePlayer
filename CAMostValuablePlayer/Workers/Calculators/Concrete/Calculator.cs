@@ -16,5 +16,10 @@
         {
             return _calculator.GetMostValuablePlayer();
         }
+
+        public char GetWinnerTeam(List<T> players)
+        {
+            return _calculator.GetWinnerTeam(players);
+        }
     }
 }

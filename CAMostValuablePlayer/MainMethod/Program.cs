@@ -15,7 +15,5 @@
             Console.WriteLine($"{nameof(handballMvp)} : {handballMvp.Nick}");
             Console.ReadLine();
         }
-
-
     }
 }
