@@ -10,9 +10,9 @@
             var handballCalculator = new Calculator<HandballPlayer>(new HandballCalculator());
             var handballMvp = handballCalculator.GetMostValuablePlayer();
 
-            Console.WriteLine($"{nameof(basketballMvp)} : {basketballMvp}");
+            Console.WriteLine($"{nameof(basketballMvp)} : {basketballMvp.Nick}");
             Console.WriteLine(string.Empty);
-            Console.WriteLine($"{nameof(handballMvp)} : {handballMvp}");
+            Console.WriteLine($"{nameof(handballMvp)} : {handballMvp.Nick}");
             Console.ReadLine();
         }
 
