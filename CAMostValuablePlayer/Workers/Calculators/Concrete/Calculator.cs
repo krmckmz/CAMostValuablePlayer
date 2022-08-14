@@ -12,10 +12,8 @@
         {
             return _calculator.BindPlayerPoints(players);
         }
-        public Player GetMostValuablePlayer()
-        {
-            return _calculator.GetMostValuablePlayer();
-        }
+
+        public Player GetMostValuablePlayer() => _calculator.GetMostValuablePlayer();
 
         public char GetWinnerTeam(List<T> players)
         {

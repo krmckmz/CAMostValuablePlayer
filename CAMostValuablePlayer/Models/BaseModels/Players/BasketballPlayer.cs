@@ -6,8 +6,8 @@
         public int Rebound { get; set; }
         public int Assist { get; set; }
 
-        public readonly int ScoreMultiplier = 2;
-        public readonly int ReboundMultiplier = 1;
-        public readonly int AssistMultiplier = 3;
+        protected internal readonly int ScoreMultiplier = 2;
+        protected internal readonly int ReboundMultiplier = 1;
+        protected internal readonly int AssistMultiplier = 3;
     }
 }

@@ -6,7 +6,7 @@
         public int GoalMade { get; set; }
         public int GoalReceived { get; set; }
 
-        public readonly int GoalMadeMultiplier = 5;
-        public readonly int GoalReceivedMultiplier = 10;
+        protected internal readonly int GoalMadeMultiplier = 5;
+        protected internal readonly int GoalReceivedMultiplier = 10;
     }
 }
