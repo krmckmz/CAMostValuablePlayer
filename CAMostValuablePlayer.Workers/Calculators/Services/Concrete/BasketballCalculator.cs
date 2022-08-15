@@ -8,9 +8,9 @@
 
             foreach (var player in players)
             {
-                player.Point = (player.ScoredPoint * player.ScoreMultiplier)
-                               + (player.Rebound * player.ReboundMultiplier)
-                               + (player.Assist * player.AssistMultiplier);
+                player.Point = (player.ScoredPoint * BasketballConstants.ScoreMultiplier)
+                               + (player.Rebound * BasketballConstants.ReboundMultiplier)
+                               + (player.Assist * BasketballConstants.AssistMultiplier);
 
                 if (player.Team == winnerTeam)
                     player.Point += 10;
@@ -22,8 +22,8 @@
 
         public Player GetMostValuablePlayer()
         {
-            var basketballDataGetter = new BasketballDataGetter();
-            List<BasketballPlayer> basketballPlayers = basketballDataGetter.GetPlayers();
+            var basketballRepository = new BasketballRepository();
+            List<BasketballPlayer> basketballPlayers = basketballRepository.GetPlayers();
             var pointBindedPlayers = BindPlayerPoints(basketballPlayers);
 
             return pointBindedPlayers.OrderByDescending(x => x.Point).First();

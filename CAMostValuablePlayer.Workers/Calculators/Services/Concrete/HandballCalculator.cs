@@ -9,8 +9,8 @@
             foreach (var player in players)
             {
                 player.Point = player.InitialRatingPoints
-                                             + (player.GoalMade * player.GoalMadeMultiplier)
-                                             + (player.GoalReceived * player.GoalReceivedMultiplier);
+                                             + (player.GoalMade * HandballConstants.GoalMadeMultiplier)
+                                             + (player.GoalReceived * HandballConstants.GoalReceivedMultiplier);
 
                 if (player.Team == winnerTeam)
                     player.Point += 10;
@@ -21,11 +21,11 @@
 
         public Player GetMostValuablePlayer()
         {
-            var handballDataGetter = new HandballDataGetter();
-            List<HandballPlayer> handballPlayers = handballDataGetter.GetPlayers();
-            var players = BindPlayerPoints(handballPlayers);
+            var handballRepository = new HandballRepository();
+            List<HandballPlayer> handballPlayers = handballRepository.GetPlayers();
+            var pointBindedPlayers = BindPlayerPoints(handballPlayers);
 
-            return players.OrderByDescending(x => x.Point).First();
+            return pointBindedPlayers.OrderByDescending(x => x.Point).First();
         }
 
         public char GetWinnerTeam(List<HandballPlayer> players)

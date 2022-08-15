@@ -1,6 +1,6 @@
 ﻿namespace CAMostValuablePlayer
 {
-    public abstract class DataGetter<T>
+    public abstract class Repository<T>
     {
         /// <summary>
         /// A method to get dummy player datas

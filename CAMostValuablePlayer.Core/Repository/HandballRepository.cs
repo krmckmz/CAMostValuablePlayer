@@ -1,6 +1,6 @@
 ﻿namespace CAMostValuablePlayer
 {
-    public class HandballDataGetter : DataGetter<HandballPlayer>
+    public class HandballRepository : Repository<HandballPlayer>
     {
         public override List<HandballPlayer> GetPlayers()
         {
